@@ -39,3 +39,14 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# credentials — never commit these
+.expotoken
+credentials/
+credentials.json
+*.p8
+*.p12
+
+# scratch output
+scripts/debug-out.png
+test-output/

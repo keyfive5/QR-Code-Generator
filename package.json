@@ -3,16 +3,48 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@expo/metro-runtime": "~57.0.8",
+    "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~57.0.11",
+    "expo-camera": "~57.0.3",
+    "expo-clipboard": "~57.0.1",
+    "expo-constants": "~57.0.9",
+    "expo-file-system": "~57.0.2",
+    "expo-haptics": "~57.0.1",
+    "expo-image-picker": "~57.0.8",
+    "expo-linking": "~57.0.5",
+    "expo-media-library": "~57.0.3",
+    "expo-print": "~57.0.1",
+    "expo-sharing": "~57.0.10",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
-    "react-native": "0.86.2"
+    "react-dom": "19.2.3",
+    "react-native": "0.86.2",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.2"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:rs && npm run test:engine && npm run test:artwork",
+    "test:rs": "node --experimental-strip-types scripts/test-rs.mjs",
+    "test:engine": "node --experimental-strip-types scripts/test-engine.mjs",
+    "test:artwork": "node --experimental-strip-types scripts/test-render.mjs",
+    "assets": "node scripts/make-assets.mjs",
+    "screenshots": "node scripts/make-screenshots.mjs"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@zxing/library": "^0.21.3",
+    "jsqr": "^1.4.0",
+    "puppeteer-core": "^25.5.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.3",
+    "typescript": "^7.0.2"
+  }
 }

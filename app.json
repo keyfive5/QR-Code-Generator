@@ -1,17 +1,33 @@
 {
   "expo": {
-    "name": "QR-Code-Generator",
-    "slug": "QR-Code-Generator",
+    "name": "QR Forge",
+    "slug": "qr-forge",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "qrforge",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#0A0B0E",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0B0E"
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hasanzafar.qrforge",
+      "buildNumber": "1",
+      "requireFullScreen": false,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleDisplayName": "QR Forge"
+      }
     },
     "android": {
+      "package": "com.hasanzafar.qrforge",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0A0B0E",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,6 +35,30 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sharing",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "QR Forge uses the camera to read QR codes and show you where they lead before anything opens.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "QR Forge needs access to your photos so you can place a logo in the middle of a code."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "QR Forge needs access to your photos so you can place a logo in the middle of a code.",
+          "savePhotosPermission": "QR Forge saves the QR codes you export to your photo library.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ]
+    ]
   }
 }
