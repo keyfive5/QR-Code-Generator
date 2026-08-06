@@ -8,6 +8,8 @@
 
 Static codes · no account · no network · no subscription · no ads · no tracking
 
+[**On the App Store →**](https://apps.apple.com/us/app/id6798846231)
+
 </div>
 
 ---
@@ -321,6 +323,23 @@ should say so — please open an issue if it does not.
   the rule of thumb it replaces, and the numbers above say how much more.
 
 ---
+
+## Shipping it
+
+The whole release path is scripted, so nothing about it lives only in a web
+form:
+
+| Script | Does |
+|---|---|
+| `scripts/gen-ios-creds.mjs` | Registers the bundle id and mints the distribution certificate and provisioning profile through the App Store Connect API, so EAS can build with local credentials |
+| `scripts/asc-metadata.mjs` | Pushes the listing copy from `store/metadata.mjs`, sets categories, and answers the age-rating questionnaire |
+| `scripts/asc-screenshots.mjs` | Uploads and verifies the store screenshots |
+| `scripts/asc-submit.mjs` | Aligns the version string, attaches the processed build, sets pricing and content rights, and files for review |
+| `scripts/make-assets.mjs` | Regenerates the icon, splash and Android adaptive layers |
+| `scripts/make-screenshots.mjs` | Captures store screenshots from the running web build |
+
+`store/metadata.mjs` holds every word of the App Store listing, so the copy is
+reviewable in a diff like the rest of the project.
 
 ## Licence
 

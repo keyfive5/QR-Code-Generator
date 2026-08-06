@@ -13,9 +13,11 @@
       "resizeMode": "contain",
       "backgroundColor": "#0A0B0E"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.hasanzafar.qrforge",
       "buildNumber": "1",
       "requireFullScreen": false,
@@ -31,7 +33,17 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -42,6 +54,7 @@
         "expo-camera",
         {
           "cameraPermission": "QR Forge uses the camera to read QR codes and show you where they lead before anything opens.",
+          "microphonePermission": false,
           "recordAudioAndroid": false
         }
       ],
@@ -59,6 +72,12 @@
           "isAccessMediaLocationEnabled": false
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "66ba6dd9-ce5a-40b7-8743-8e834d53c2e1"
+      }
+    },
+    "owner": "keyfive"
   }
 }
