@@ -335,6 +335,7 @@ form:
 | `scripts/asc-metadata.mjs` | Pushes the listing copy from `store/metadata.mjs`, sets categories, and answers the age-rating questionnaire |
 | `scripts/asc-screenshots.mjs` | Uploads and verifies the store screenshots |
 | `scripts/asc-submit.mjs` | Aligns the version string, attaches the processed build, sets pricing and content rights, and files for review |
+| `scripts/asc-availability.mjs` | Puts the app on sale in every territory. A new app record has no availability resource at all, and without it an approved app sits at READY_FOR_SALE while every storefront reports "not available in this region" |
 | `scripts/make-assets.mjs` | Regenerates the icon, splash and Android adaptive layers |
 | `scripts/make-screenshots.mjs` | Captures store screenshots from the running web build |
 
